@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "hardhat test test/sample-test.js --network localhost",
+    "localchain": "hardhat node",
+    "deploy": "hardhat run scripts/sample-script.js --network localhost"
   },
   "keywords": [],
   "author": "",
