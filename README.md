@@ -10,3 +10,8 @@ NFTトークンを発行するためのプログラムを管理するリポジ�
     npm run deploy  
     cd NFTSample/pacakages/frontend
     npm run dev
+
+### wait-onについて
+    指定したファイル・URL・TCP ソケット等が使えるようになるまで待機するツール
+
+ 
