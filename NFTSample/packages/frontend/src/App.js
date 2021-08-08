@@ -36,13 +36,30 @@ const buttonDeploy = async() => {
  * 「NFT名取得」ボタンを押した時の処理
  */
 const buttonGetName = async() => {
-
+  // コントラクト用のファクトリーを生成
+  const contract = new ethers.Contract(address, abi, provider);]
+  // コントラク名とアドレスを出力する。
+  console.log(await contract.name())
+  console.log(address);
 }
 
 /**
  * 「NFT発行」ボタンを押した時の処理
  */
 const buttonMint = async() => {
+  // プロバイダーから署名者の情報を取得する。
+  const signer = provider.getSigner();
+  // コントラクト用の変数を生成する。
+  const contract = new ethers.Contract(address, abi, provider);
+  // NFTコントラクトのmint関数を実行する。
+  const { hash } = await contract.connect(signer).mint(signer.getAddress());
+  console.log(contract);
+  console.log(address);
+  // ネットワーク情報を取得する。
+  const net = await signer.provider.getNetwork();
+  if( net.chainId == 4) {
+    console.log("https://rinkeby.etherscan.io/tx/" + hash);
+  }
 
 }
 
@@ -50,7 +67,12 @@ const buttonMint = async() => {
  * 「NFT総供給量」ボタンを押した時の処理
  */
 const buttonSupply = async() => {
-
+  // コントラクト用の変数を生成する。
+  const contract = new ethers.Contract(address, abi, provider);
+  // アドレスを出力する。
+  console.log(address);
+  // totalSupply関数を呼び出す。
+  console.log(await contract.totalSupply());
 }
 
 /**
