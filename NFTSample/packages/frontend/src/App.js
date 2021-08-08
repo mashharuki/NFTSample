@@ -23,8 +23,8 @@ const buttonDeploy = async() => {
   const contract = await factory.deploy();
   // deployしたアドレスを取得する。
   address = contract.address;
-  console.log(contract);
-  console.log(address);
+  alert(contract);
+  alert("コントラクトアドレス：", address);
   // ネットワーク情報を取得する。
   const net = await signer.provider.getNetwork();
   if( net.chainId == 4) {
@@ -38,9 +38,9 @@ const buttonDeploy = async() => {
 const buttonGetName = async() => {
   // コントラクト用のファクトリーを生成
   const contract = new ethers.Contract(address, abi, provider);
-  // コントラク名とアドレスを出力する。
-  console.log(await contract.name())
-  console.log(address);
+  // NFT名とアドレスを出力する。
+  alert("NFT名：", await contract.name());
+  alert("コントラクトアドレス：", address);
 }
 
 /**
@@ -53,8 +53,8 @@ const buttonMint = async() => {
   const contract = new ethers.Contract(address, abi, provider);
   // NFTコントラクトのmint関数を実行する。
   const { hash } = await contract.connect(signer).mint(signer.getAddress());
-  console.log(contract);
-  console.log(address);
+  alert(contract);
+  alert("コントラクトアドレス：", address);
   // ネットワーク情報を取得する。
   const net = await signer.provider.getNetwork();
   if( net.chainId == 4) {
@@ -70,9 +70,9 @@ const buttonSupply = async() => {
   // コントラクト用の変数を生成する。
   const contract = new ethers.Contract(address, abi, provider);
   // アドレスを出力する。
-  console.log(address);
+  alert("コントラクトアドレス：", address);
   // totalSupply関数を呼び出す。
-  console.log(await contract.totalSupply());
+  alert("総供給量：", await contract.totalSupply());
 }
 
 /**
