@@ -37,7 +37,7 @@ const buttonDeploy = async() => {
  */
 const buttonGetName = async() => {
   // コントラクト用のファクトリーを生成
-  const contract = new ethers.Contract(address, abi, provider);]
+  const contract = new ethers.Contract(address, abi, provider);
   // コントラク名とアドレスを出力する。
   console.log(await contract.name())
   console.log(address);
