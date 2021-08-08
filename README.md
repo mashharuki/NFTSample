@@ -6,5 +6,7 @@ NFTトークンを発行するためのプログラムを管理するリポジ�
     npm run localchain  
 
     (上記のコマンドを打ち込んで起動させた状態で、別のターミナルを立ち上げる。)
+    まず、コントラクトをデプロイする。
+    npm run deploy  
     cd NFTSample/pacakages/frontend
     npm run dev
