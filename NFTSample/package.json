@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm workspace contracts test",
+    "test": "npm run test --workspace contract",
     "dev": "run-p dev:*",
-    "dev:run-localchain": "npm workspace contracts localchain",
-    "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && npm workspace contracts deploy",
-    "dev:frontend": "wait-on http://localhost:8545 && npm workspace frontend dev"
+    "dev:run-localchain": "npm run localchain --workspace contracts",
+    "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && npm run deploy --workspace contracts",
+    "dev:frontend": "wait-on http://localhost:8545 && npm run dev --workspace frontend"
   },
   "keywords": [],
   "author": "",
