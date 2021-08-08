@@ -8,7 +8,9 @@
     "dev": "run-p dev:*",
     "dev:run-localchain": "npm run localchain --workspace contracts",
     "dev:deploy-contract-to-localchain": "wait-on http://localhost:8545 && npm run deploy --workspace contracts",
-    "dev:frontend": "wait-on http://localhost:8545 && npm run dev --workspace frontend"
+    "dev:frontend": "wait-on http://localhost:8545 && npm run dev --workspace frontend",
+    "dev-staging": "run-p dev-staging:*",
+    "dev-staging:frontend": "npm run dev -w frontend"
   },
   "keywords": [],
   "author": "",
